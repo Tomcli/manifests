@@ -61,13 +61,13 @@ spec:
   #       name: manifests
   #       path: kubeflow-roles
   #   name: kubeflow-roles
-  - kustomizeConfig:
-      overlays:
-      - istio
-      repoRef:
-        name: manifests
-        path: common/centraldashboard
-    name: centraldashboard
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       repoRef:
+#         name: manifests
+#         path: common/centraldashboard
+#     name: centraldashboard
   # - kustomizeConfig:
   #     overlays:
   #     repoRef:
@@ -80,42 +80,42 @@ spec:
   #       name: manifests
   #       path: admission-webhook/webhook
   #   name: webhook
-  - kustomizeConfig:
-      overlays:
-      - istio
-      - openshift
-      repoRef:
-        name: manifests
-        path: jupyter/jupyter-web-app
-    name: jupyter-web-app
-  - kustomizeConfig:
-      overlays:
-      - istio
-      - openshift
-  #    - crc # If you're running on Code Ready Containers (CRC), you will need this overlay to work around issue https://github.com/code-ready/crc/issues/814
-      repoRef:
-        name: manifests
-        path: metadata
-    name: metadata
-  - kustomizeConfig:
-      overlays:
-      - istio
-      - openshift # We need to use custom controller to overcome fsGroup issue https://github.com/kubeflow/kubeflow/issues/4617
-      repoRef:
-        name: manifests
-        path: jupyter/notebook-controller
-    name: notebook-controller
-  - kustomizeConfig:
-      overlays:
-      repoRef:
-        name: manifests
-        path: pytorch-job/pytorch-job-crds
-    name: pytorch-job-crds
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pytorch-job/pytorch-operator
-    name: pytorch-operator
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       - openshift
+#       repoRef:
+#         name: manifests
+#         path: jupyter/jupyter-web-app
+#     name: jupyter-web-app
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       - openshift
+#   #    - crc # If you're running on Code Ready Containers (CRC), you will need this overlay to work around issue https://github.com/code-ready/crc/issues/814
+#       repoRef:
+#         name: manifests
+#         path: metadata
+#     name: metadata
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       - openshift # We need to use custom controller to overcome fsGroup issue https://github.com/kubeflow/kubeflow/issues/4617
+#       repoRef:
+#         name: manifests
+#         path: jupyter/notebook-controller
+#     name: notebook-controller
+#   - kustomizeConfig:
+#       overlays:
+#       repoRef:
+#         name: manifests
+#         path: pytorch-job/pytorch-job-crds
+#     name: pytorch-job-crds
+#   - kustomizeConfig:
+#       repoRef:
+#         name: manifests
+#         path: pytorch-job/pytorch-operator
+#     name: pytorch-operator
   # - kustomizeConfig:
   #     parameters:
   #     - name: namespace
@@ -149,29 +149,29 @@ spec:
         name: manifests
         path: tensorboard
     name: tensorboard
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tf-training/tf-job-crds
-    name: tf-job-crds
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tf-training/tf-job-operator
-    name: tf-job-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: katib/katib-crds
-    name: katib-crds
-  - kustomizeConfig:
-      overlays:
-      - istio
-      - openshift
-      repoRef:
-        name: manifests
-        path: katib/katib-controller
-    name: katib-controller
+#   - kustomizeConfig:
+#       repoRef:
+#         name: manifests
+#         path: tf-training/tf-job-crds
+#     name: tf-job-crds
+#   - kustomizeConfig:
+#       repoRef:
+#         name: manifests
+#         path: tf-training/tf-job-operator
+#     name: tf-job-operator
+#   - kustomizeConfig:
+#       repoRef:
+#         name: manifests
+#         path: katib/katib-crds
+#     name: katib-crds
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       - openshift
+#       repoRef:
+#         name: manifests
+#         path: katib/katib-controller
+#     name: katib-controller
   - kustomizeConfig:
       repoRef:
         name: manifests
@@ -227,22 +227,22 @@ spec:
         name: manifests
         path: pipeline/pipeline-visualization-service
     name: pipeline-visualization-service
-  - kustomizeConfig:
-      overlays:
-      - istio
-      - openshift #We need custom controller to overcome an istio-injection issue https://github.com/kubeflow/kubeflow/issues/3935
-      parameters:
-      - name: admin
-        value: johnDoe@acme.com
-      repoRef:
-        name: manifests
-        path: profiles
-    name: profiles
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: seldon/seldon-core-operator
-    name: seldon-core-operator
+#   - kustomizeConfig:
+#       overlays:
+#       - istio
+#       - openshift #We need custom controller to overcome an istio-injection issue https://github.com/kubeflow/kubeflow/issues/3935
+#       parameters:
+#       - name: admin
+#         value: johnDoe@acme.com
+#       repoRef:
+#         name: manifests
+#         path: profiles
+#     name: profiles
+#   - kustomizeConfig:
+#       repoRef:
+#         name: manifests
+#         path: seldon/seldon-core-operator
+#     name: seldon-core-operator
   repos:
   - name: manifests
     uri:  https://github.com/opendatahub-io/manifests/tarball/v0.7-branch-openshift
