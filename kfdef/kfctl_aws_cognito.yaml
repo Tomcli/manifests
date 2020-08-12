@@ -7,6 +7,11 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
+        path: namespaces/base
+    name: namespaces
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
         path: stacks/aws/application/istio-stack
     name: istio-stack
   - kustomizeConfig:
@@ -57,11 +62,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metadata/v3
-    name: metadata
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: knative/installs/generic
     name: knative
   - kustomizeConfig:
@@ -74,11 +74,6 @@ spec:
         name: manifests
         path: stacks/aws/application/spartakus
     name: spartakus
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tensorboard/overlays/istio
-    name: tensorboard
   - kustomizeConfig:
       repoRef:
         name: manifests
