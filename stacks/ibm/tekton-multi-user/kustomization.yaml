@@ -10,7 +10,7 @@ resources:
   - ../application/profiles
   - ../../../pipeline/minio/installs/ibm
   - ../../../pipeline/mysql/installs/ibm
-  - ../../../pipeline/installs/multi-user
+  - ../../../pipeline/installs/tekton-multi-user
   - ../../../argo/base_v3
   - ../application/metadata
   - ../../../pytorch-job/pytorch-job-crds/overlays/application
