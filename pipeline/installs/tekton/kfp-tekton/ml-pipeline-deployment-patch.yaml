@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-pipeline
+spec:
+  template:
+    spec:
+      containers:
+      - name: ml-pipeline-api-server
+        env:
+        - name: ARTIFACT_BUCKET
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: artifact_bucket
+        - name: ARTIFACT_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: artifact_endpoint
+        - name: ARTIFACT_ENDPOINT_SCHEME
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: artifact_endpoint_scheme
+        - name: ENABLE_LOGGING
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: enable_logging
+        - name: ENABLE_ARTIFACT
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: enable_artifact
+        - name: STRIP_EOF
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: strip_eof
+        - name: ARTIFACT_SCRIPT
+          valueFrom:
+            configMapKeyRef:
+              name: kfp-tekton-config
+              key: artifact_script
