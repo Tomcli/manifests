@@ -27,10 +27,6 @@ configMapGenerator:
   behavior: merge
   literals:
   - minioPvcName=minio-pv-claim
-- name: workflow-controller-parameters
-  behavior: merge
-  literals:
-  - containerRuntimeExecutor=pns
 - name: profiles-config
   behavior: merge
   literals:
