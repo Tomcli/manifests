@@ -8,8 +8,8 @@ spec:
       containers:
       - name: main
         env:
-        - name: ENABLE_LOGGING
+        - name: ENABLE_ARCHIVE_LOGS
           valueFrom:
             configMapKeyRef:
               name: kfp-tekton-config
-              key: enable_logging
+              key: enable_archive_logs
