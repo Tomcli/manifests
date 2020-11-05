@@ -91,7 +91,7 @@ spec:
      repoRef:
        name: manifests
        path: stacks/openshift/application/pipeline
-   name: pipeline
+    name: pipeline
   - kustomizeConfig:
       repoRef:
         name: manifests
