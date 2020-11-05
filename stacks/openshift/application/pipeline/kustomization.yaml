@@ -15,11 +15,13 @@ patches:
   path: patchuirule.yaml
 
 configMapGenerator:
+# Only for multi-user
 # - name: kubeflow-pipelines-profile-controller-code
 #   behavior: replace
 #   files:
 #   - sync.py
-#commenting these out for now since pipelines has to be installed in main kustomize because of
+
+# commenting these out for now since pipelines has to be installed in main kustomize because of
 # the dependency on profiles
 - envs:
   - ../../config/params.env
