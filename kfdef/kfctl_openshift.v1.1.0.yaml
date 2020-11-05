@@ -81,22 +81,22 @@ spec:
         name: manifests
         path: stacks/openshift/application/katib
     name: katib
-  # commenting this out since it is included in kubeflow-apps
-  #- kustomizeConfig:
-  #    repoRef:
-  #      name: manifests
-  #      path: stacks/openshift/application/pipeline
-  #  name: pipeline
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: stacks/openshift/application/seldon
-    name: seldon
   - kustomizeConfig:
       repoRef:
         name: manifests
         path: stacks/openshift
     name: kubeflow-apps
+  # commenting this out since it is included in kubeflow-apps
+  - kustomizeConfig:
+     repoRef:
+       name: manifests
+       path: stacks/openshift/application/pipeline
+    name: pipeline
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/openshift/application/seldon
+    name: seldon
   repos:
   - name: manifests
     uri: https://github.com/kubeflow/manifests/archive/v1.1-branch.tar.gz

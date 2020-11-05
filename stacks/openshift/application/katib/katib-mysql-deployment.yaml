@@ -9,4 +9,3 @@
 - op: replace
   path: /spec/template/spec/containers/0/volumeMounts/0/mountPath
   value: /var/lib/mysql/data
-
