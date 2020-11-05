@@ -13,10 +13,10 @@ patches:
   path: patchuirule.yaml
 
 configMapGenerator:
-- name: kubeflow-pipelines-profile-controller-code
-  behavior: replace
-  files:
-  - sync.py
+# - name: kubeflow-pipelines-profile-controller-code
+#   behavior: replace
+#   files:
+#   - sync.py
 #commenting these out for now since pipelines has to be installed in main kustomize because of
 # the dependency on profiles
 - envs:
